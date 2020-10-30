@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
@@ -104,13 +106,57 @@
     <routinesParameter id="_NT6y8BpBEeuggaMImWduCw" name="TalendStringUtil"/>
     <routinesParameter id="_NTn4ABpBEeuggaMImWduCw" name="TalendString"/>
   </parameters>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8266f75f-cff9-4a15-b48f-c78c8ecd5cc5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cDjigJGUP3sgTBufOlI9dAXn/pt1ie/gOVb8Nvd5E1fpZ2Y6mUXbZQH64A7IJrAxm8btq0WZTomC
-OwVK4SuOKA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_68b9eedb-eca8-41a1-b15a-0333c016d264"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5R1YjiciqSaMtuRVMDUSHlv+x3xRtTqQITNclM6zjY2xsgIj45cuGLdHumnX8Lz/mhJlenCPtO/U
-U2S9mGqfxg==</DigestValue></Reference></SignedInfo><SignatureValue>b5d56ZRa6bYO1hwFVd33EEYfGiVqq1QwnCpaip0kGAkOeBXXP2C3bZVpQfpjzgMpio64K/yfRA6A
-7OVsoJOeNe/g/oBzFZvg72SiCZ30DoI472/24DFQUeCmBzMQqOSopWZ4rPWSmagTTieTqXR+qnqQ
-Fu8SkwauHKctuZXsN/d86Y25qNuLt9E0h1quoCPW5jjSokD+EJ14lL0BPLnC3rU5MCfPGcQ12RMI
-Ldp/dtaHWq3j+CKef/l16xVEWaXfu4/a/dzAKUVa5v67spENY53IunZ9z6DnvEHj2eedhkGqvM77
-OL+5PQGmHz0DDWRgisaVGnG/ihq7tu99LuFEmw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+  <node componentName="tSAPADSOInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPADSOInput_1"/>
+    <elementParameter field="TEXT" name="SAPHANA_HOST" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SAPHANA_PORT" value="&quot;30015&quot;"/>
+    <elementParameter field="TEXT" name="SAPHANA_TABLESCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SAPHANA_USER" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SAPHANA_PASS" value="0RMsyjmybrE="/>
+    <elementParameter field="TEXT" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="sap_id"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSAPADSOInput_1"/>
+  </node>
+  <node componentName="tSAPConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPConnection_1"/>
+    <elementParameter field="LABEL" name="NOTE1" value="(To use this component, you need first to add the SAP Java Connector (sapjco.jar or sapjco3.jar) in the Modules view)"/>
+    <elementParameter field="LABEL" name="NOTE2_1" value="The selected SAP JCO version allow you to share this SAP connection only with tSAPBAPI and tSAPTableInput"/>
+    <elementParameter field="LABEL" name="NOTE2_2" show="false" value="The selected SAP JCO version does not allow you to share this SAP connection with tSAPBAPI and tSAPTableInput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="TALENDSAP"/>
+    <elementParameter field="CLOSED_LIST" name="SERVERTYPE" value="ApplicationServer"/>
+    <elementParameter field="TEXT" name="CLIENT" value="&quot;000&quot;"/>
+    <elementParameter field="TEXT" name="USERID" value="&quot;TALEND&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="kjy82gsa7tRhYX4tKHiCew=="/>
+    <elementParameter field="TEXT" name="LANGUAGE" value="&quot;EN&quot;"/>
+    <elementParameter field="TEXT" name="HOSTNAME" value="&quot;HOST&quot;"/>
+    <elementParameter field="TEXT" name="SYSTEMNUMBER" value="&quot;00&quot;"/>
+    <elementParameter field="TEXT" name="SYSTEMID" show="false" value="&quot;PRD&quot;"/>
+    <elementParameter field="TEXT" name="GROUPNAME" show="false" value="&quot;tGroup&quot;"/>
+    <elementParameter field="LABEL" name="NOTE_DATASOURCE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="SAP_DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="SAP_PROPERTIES"/>
+    <elementParameter field="CHECK" name="FTP_HTTP_FUNCTION" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPADSOInput_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPConnection_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_af5829bd-f277-4cb1-b84d-9a21e6940e06"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UL0lm0CgXVbbXvwWG95gdTyi6sMV1kxZ7Wl8fyDM9/St4OGMNSoz8u6TFDmAEwz7JsIWKklkrSUg
+HB7yF0e/Iw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ff54e899-01ad-4301-874d-a53de51cb6db"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>zuxY5v7fU4foePXRriW5ZH4rYgh9jRkrHDph5hUDD81LrAKLtndeXmUR7660Da2qlFz133KtuWwl
+OYOruhxOlw==</DigestValue></Reference></SignedInfo><SignatureValue>xhb5l4TsSVV807Mgn5Tc2CEYWv53iyoAK7+FrUWPwYH26NdyRE2kg5yBVIqugXizXhqkwtk3U+wM
+0MGyyW/Vy4OFMVBVzHqvI//6/bRGr8j43wI9wU2PX0eyWpQF3/pZcGMewyEjEp9nVvRSAQuL2aEi
+JzKUzKCuf3jBK6OH3UXMR1EOcPC5BJmDJUMLxzCaE0MJyiaEBxZiWqRwrRmCQPBKZ68mhxzshqZt
+10LY4c1clWf3NEILEzJWWYClmlO4xRQEnJl58y7GOM1+LDMLff1uIBmtZuw6Y/3CahFJyQ6MQERX
+4TdO1CgQB5hx5gYERwMZe1Y5jEmO2QBeoBqyHw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -134,4 +180,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_68b9eedb-eca8-41a1-b15a-0333c016d264" Target="#_8266f75f-cff9-4a15-b48f-c78c8ecd5cc5"><Timestamp>2020-10-30 00:03:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ff54e899-01ad-4301-874d-a53de51cb6db" Target="#_af5829bd-f277-4cb1-b84d-9a21e6940e06"><Timestamp>2020-10-30 00:04:03</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
