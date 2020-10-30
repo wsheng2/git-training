@@ -42,8 +42,83 @@
   <dependencies>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>antlr-2.7.6</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>asm-1.5.3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>asm-3.1</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>asm-attrs-1.5.3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>bonita-client-5.2.3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>bonita-server-5.2.3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>cglib-nodep-2.1_3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>commons-collections-2.1.1</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>commons-logging-1.0.4</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>dom4j-1.6.1</artifactId>
       <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>ehcache-1.2.3</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>groovy-all-1.7.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>h2-1.2.132</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>hibernate-3.2.6.ga</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>jline-0.9.94</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>jta-1.1</artifactId>
+      <version>6.4.0</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
@@ -52,7 +127,42 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>novaBpmIdentity-1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>novaBpmPerf-1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>novaBpmUtil-1.0</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>slf4j-log4j12-1.7.2</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>talend-codegen-utils</artifactId>
+      <version>0.20.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>talend_file_enhanced_20070724</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>xpp3_min-1.1.3.4.O</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>xstream-1.2.2</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
