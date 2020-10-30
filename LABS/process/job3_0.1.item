@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
@@ -104,13 +106,383 @@
     <routinesParameter id="_NT6y8BpBEeuggaMImWduCw" name="TalendStringUtil"/>
     <routinesParameter id="_NTn4ABpBEeuggaMImWduCw" name="TalendString"/>
   </parameters>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7dc9e857-2e66-4a01-a3d1-e35d9ab55204"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cDjigJGUP3sgTBufOlI9dAXn/pt1ie/gOVb8Nvd5E1fpZ2Y6mUXbZQH64A7IJrAxm8btq0WZTomC
-OwVK4SuOKA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7f6c8fc0-4488-4cb4-bf84-e9ca06f7698c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>caWSlYOS0nljZ0GHx9cSPhNyKsJelv+9Cb7IzJeTFfdxeNVO+TmAYIOcfuZxfjmTSlmD08zYCagJ
-tyIVuRxulQ==</DigestValue></Reference></SignedInfo><SignatureValue>xnJmM55MBt6N6U7nRxPOvwjlkBjUQxlIBZBzjdKTPldVJWkdckFy7EZKRoZsUtjMrjwDLO8KKDJx
-208T7pLbNi6tQs6asIQByhd5RD478GN1Ogme9AWv8RXkE1WX8KUKRN5GSXs90xj5eaqhQmd+kXcR
-+c8kO1CwIKDvOZvdrZLEkLMcn+Zjsp4I//OH+7GIRRPgWg3Yjl4ZIuTezIQmRBqQ+Vx7QN1Qbcro
-nKQHDuyMBJ/FtxESJBql9Lu3gtSPSjXCuYMJ7EnzvLLFDoPeUmrgM8PbquP70jYe1pCn4Pqmtpg4
-oThm1JzhCO4D6Zy1VahnhKOZlDt5nHXd+ItbWQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+  <node componentName="tMicrosoftCrmInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMicrosoftCrmInput_1"/>
+    <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="ON_PREMISE"/>
+    <elementParameter field="CLOSED_LIST" name="API_VERSION" show="false" value="API_2011"/>
+    <elementParameter field="CLOSED_LIST" name="MS_CRM_VERSION" value="CRM_2011"/>
+    <elementParameter field="CLOSED_LIST" name="ONLINE_REGISTERED_APP" show="false" value="NATIVE"/>
+    <elementParameter field="TEXT" name="ENDPOINTURL" value="&quot;http://192.168.0.22/MSCrmServices/2007/CrmService.asmx&quot;"/>
+    <elementParameter field="TEXT" name="ORGNAME" value="&quot;talend&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="&quot;crm1&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="b3xcfpYQ4vY="/>
+    <elementParameter field="TEXT" name="DOMAIN" value="&quot;192.168.0.22&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;192.168.0.22&quot;"/>
+    <elementParameter field="TEXT" name="DISC_WSDL" show="false" value="&quot;https://disco.crm.dynamics.com/XRMServices/2011/Discovery.svc&quot;"/>
+    <elementParameter field="TEXT" name="SERVICE_ROOT_URL" show="false" value="&quot;https://talend.api.crm.dynamics.com/api/data/v8.1/&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="80"/>
+    <elementParameter field="TEXT" name="ORGANIZATION_WSDL" show="false" value="&quot;https://&lt;domain&gt;:&lt;port&gt;/&lt;organization_name&gt;/XRMServices/2011/Organization.svc?wsdl&quot;"/>
+    <elementParameter field="TEXT" name="SECURITY_SERVICE_URL" show="false" value="&quot;https://&lt;domain&gt;:&lt;port&gt;/adfs/services/trust/mex&quot;"/>
+    <elementParameter field="FILE" name="CERTIFICATE_PATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="APPLICATION_ID" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="CLIENT_SECRET" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="AUTHORITY" show="false" value="&quot;https://login.windows.net/common/oauth2/authorize&quot;"/>
+    <elementParameter field="TEXT" name="TIMEOUT" value="60"/>
+    <elementParameter field="CLOSED_LIST" name="ENTITYNAME" value="Contact"/>
+    <elementParameter field="CLOSED_LIST" name="ENTITYSET" show="false" value="contacts"/>
+    <elementParameter field="TEXT" name="CUSTOM_ENTITY_NAME" show="false" value="&quot;customEntityName&quot;"/>
+    <elementParameter field="CHECK" name="SPECIFY_COMPLEX_FILTER" show="false" value="false"/>
+    <elementParameter field="TEXT" name="CUSTOM_FILTER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="LOGICAL_OP" value="And"/>
+    <elementParameter field="TABLE" name="CONDITIONS"/>
+    <elementParameter field="CHECK" name="ORDER_BY" show="false" value="false"/>
+    <elementParameter field="TABLE" name="ORDER_BY_TABLE" show="false"/>
+    <elementParameter field="CHECK" name="REUSE_HTTP_CLIENT" value="false"/>
+    <elementParameter field="CHECK" name="DEBUG" show="false" value="false"/>
+    <elementParameter field="TEXT" name="MAX_RECONN_ATTEMPS" show="false" value="5"/>
+    <elementParameter field="TEXT" name="ATTEMPS_INTERVAL_TIME" show="false" value="1000"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tMicrosoftCrmInput_1">
+      <column defaultValue="" key="false" length="0" name="accountrolecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_addressid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_addresstypecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_city" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_country" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_county" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_fax" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_freighttermscode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_latitude" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_line1" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_line2" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_line3" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_longitude" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_postalcode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_postofficebox" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_primarycontactname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_shippingmethodcode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_stateorprovince" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_telephone1" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_telephone2" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_telephone3" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_upszone" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_utcoffset" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_addressid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_addresstypecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_city" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_country" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_county" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_fax" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_freighttermscode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_latitude" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_line1" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_line2" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_line3" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_longitude" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_name" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_postalcode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_postofficebox" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_primarycontactname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_shippingmethodcode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_stateorprovince" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_telephone1" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_telephone2" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_telephone3" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_upszone" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_utcoffset" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging30" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging30_base" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging60" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging60_base" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging90" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging90_base" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="anniversary" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="annualincome" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="annualincome_base" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="assistantname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="assistantphone" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="birthdate" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="childrensnames" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="contactid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="createdby" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="createdon" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="creditlimit" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="creditlimit_base" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="creditonhold" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="customersizecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="customertypecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="defaultpricelevelid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="department" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="description" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotbulkemail" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotbulkpostalmail" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotemail" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotfax" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotphone" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotpostalmail" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotsendmm" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="educationcode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="emailaddress1" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="emailaddress2" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="emailaddress3" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="employeeid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="exchangerate" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="externaluseridentifier" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="familystatuscode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="fax" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="firstname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ftpsiteurl" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="fullname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="gendercode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="governmentid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="haschildrencode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="importsequencenumber" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="isbackofficecustomer" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="jobtitle" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="lastname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="lastusedincampaign" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="leadsourcecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="managername" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="managerphone" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="masterid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="merged" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="middlename" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="mobilephone" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="modifiedby" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="modifiedon" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="nickname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="numberofchildren" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="originatingleadid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="overriddencreatedon" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ownerid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="owningbusinessunit" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="pager" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="parentcustomerid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="participatesinworkflow" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="paymenttermscode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredappointmentdaycode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredappointmenttimecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredcontactmethodcode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredequipmentid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredserviceid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredsystemuserid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="salutation" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="shippingmethodcode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="spousesname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="statecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="statuscode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="suffix" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="telephone1" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="telephone2" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="telephone3" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="territorycode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="timezoneruleversionnumber" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="transactioncurrencyid" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="utcconversiontimezonecode" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="websiteurl" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="yomifirstname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="yomifullname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="yomilastname" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="yomimiddlename" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMicrosoftCrmOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="576" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMicrosoftCrmOutput_1"/>
+    <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="ON_PREMISE"/>
+    <elementParameter field="CLOSED_LIST" name="API_VERSION" show="false" value="API_2011"/>
+    <elementParameter field="CLOSED_LIST" name="MS_CRM_VERSION" value="CRM_2011"/>
+    <elementParameter field="CLOSED_LIST" name="ONLINE_REGISTERED_APP" show="false" value="NATIVE"/>
+    <elementParameter field="TEXT" name="ENDPOINTURL" value="&quot;http://192.168.0.22/MSCrmServices/2007/CrmService.asmx&quot;"/>
+    <elementParameter field="TEXT" name="ORGNAME" value="&quot;talend&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="&quot;crm1&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="b3xcfpYQ4vY="/>
+    <elementParameter field="TEXT" name="DOMAIN" value="&quot;192.168.0.22&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;192.168.0.22&quot;"/>
+    <elementParameter field="TEXT" name="DISC_WSDL" show="false" value="&quot;https://disco.crm.dynamics.com/XRMServices/2011/Discovery.svc&quot;"/>
+    <elementParameter field="TEXT" name="SERVICE_ROOT_URL" show="false" value="&quot;https://talend.api.crm.dynamics.com/api/data/v8.1/&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="80"/>
+    <elementParameter field="TEXT" name="ORGANIZATION_WSDL" show="false" value="&quot;https://&lt;domain&gt;:&lt;port&gt;/&lt;organization_name&gt;/XRMServices/2011/Organization.svc?wsdl&quot;"/>
+    <elementParameter field="TEXT" name="SECURITY_SERVICE_URL" show="false" value="&quot;https://&lt;domain&gt;:&lt;port&gt;/adfs/services/trust/mex&quot;"/>
+    <elementParameter field="FILE" name="CERTIFICATE_PATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="APPLICATION_ID" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="CLIENT_SECRET" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="AUTHORITY" show="false" value="&quot;https://login.windows.net/common/oauth2/authorize&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="ACTION" value="insert"/>
+    <elementParameter field="TEXT" name="TIMEOUT" value="60"/>
+    <elementParameter field="CLOSED_LIST" name="ENTITYNAME" value="Contact"/>
+    <elementParameter field="CLOSED_LIST" name="ENTITYSET" show="false" value="contacts"/>
+    <elementParameter field="TEXT" name="CUSTOM_ENTITY_NAME" show="false" value="&quot;customEntityName&quot;"/>
+    <elementParameter field="TABLE" name="LOOKUP_MAPPING"/>
+    <elementParameter field="CHECK" name="REUSE_HTTP_CLIENT" value="false"/>
+    <elementParameter field="CHECK" name="EMPTY_LOOKUP_TO_NULL" show="false" value="false"/>
+    <elementParameter field="CHECK" name="IGNORE_NULL" value="false"/>
+    <elementParameter field="CHECK" name="DEBUG" show="false" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="mscrm_id"/>
+    <elementParameter field="TEXT" name="MAX_RECONN_ATTEMPS" show="false" value="5"/>
+    <elementParameter field="TEXT" name="ATTEMPS_INTERVAL_TIME" show="false" value="1000"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tMicrosoftCrmOutput_1">
+      <column defaultValue="" key="false" length="0" name="accountrolecode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_addressid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_addresstypecode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_city" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_country" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_county" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_fax" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_freighttermscode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_latitude" nullable="true" originalLength="-1" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_line1" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_line2" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_line3" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_longitude" nullable="true" originalLength="-1" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_name" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_postalcode" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_postofficebox" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_primarycontactname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_shippingmethodcode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_stateorprovince" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_telephone1" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_telephone2" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_telephone3" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_upszone" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address1_utcoffset" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_addressid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_addresstypecode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_city" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_country" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_county" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_fax" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_freighttermscode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_latitude" nullable="true" originalLength="-1" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_line1" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_line2" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_line3" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_longitude" nullable="true" originalLength="-1" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_name" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_postalcode" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_postofficebox" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_primarycontactname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_shippingmethodcode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_stateorprovince" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_telephone1" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_telephone2" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_telephone3" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_upszone" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="address2_utcoffset" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging30" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging30_base" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging60" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging60_base" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging90" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="aging90_base" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="anniversary" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="annualincome" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="annualincome_base" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="assistantname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="assistantphone" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="birthdate" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="childrensnames" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="contactid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="createdby" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="createdon" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="creditlimit" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="creditlimit_base" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="creditonhold" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="customersizecode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="customertypecode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="defaultpricelevelid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="department" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="description" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotbulkemail" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotbulkpostalmail" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotemail" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotfax" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotphone" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotpostalmail" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="donotsendmm" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="educationcode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="emailaddress1" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="emailaddress2" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="emailaddress3" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="employeeid" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="exchangerate" nullable="true" originalLength="-1" precision="0" sourceType="DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="externaluseridentifier" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="familystatuscode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="fax" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="firstname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ftpsiteurl" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="fullname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="gendercode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="governmentid" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="haschildrencode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="importsequencenumber" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="isbackofficecustomer" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="jobtitle" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="lastname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="lastusedincampaign" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="leadsourcecode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="managername" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="managerphone" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="masterid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="merged" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="middlename" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="mobilephone" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="modifiedby" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="modifiedon" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="nickname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="numberofchildren" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="originatingleadid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="overriddencreatedon" nullable="true" originalLength="-1" pattern="&quot;yyyy-MM-dd'T'HH:mm:ssZ&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ownerid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="owningbusinessunit" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="pager" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="parentcustomerid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="participatesinworkflow" nullable="true" originalLength="-1" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="paymenttermscode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredappointmentdaycode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredappointmenttimecode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredcontactmethodcode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredequipmentid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredserviceid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="preferredsystemuserid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="salutation" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="shippingmethodcode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="spousesname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="statecode" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="statuscode" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="subscriptionid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="suffix" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="telephone1" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="telephone2" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="telephone3" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="territorycode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="timezoneruleversionnumber" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="transactioncurrencyid" nullable="true" originalLength="-1" precision="0" sourceType="ENTITYNAME" type="id_Object" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="utcconversiontimezonecode" nullable="true" originalLength="-1" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="websiteurl" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="yomifirstname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="yomifullname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="yomilastname" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="yomimiddlename" nullable="true" originalLength="-1" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMicrosoftCrmInput_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMicrosoftCrmOutput_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_13c20c6e-3006-40de-a1aa-8a1ceee2acea"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Td74y0vbIfvBXghix1flNuo8s583MbMJAPHbuQDFiYOxZPhU+6DOG4wujA2TVGhl1MjplMU5hgni
+OaWGoxcErQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_30816b62-9e37-4878-9462-ca5b4ffba098"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ym5Yk9ekLhUOQO/oCg6HSaWW3Uln2/WDhbFmre0xrmz42oldMiaUUplYvXMRGdPibdixwCCkT0WZ
+zlwry7852A==</DigestValue></Reference></SignedInfo><SignatureValue>iQVAsgEfoEV3wOFcR1w5OD46ckp4jhVJ9GpAoFJr7LNTg+mpWiSJxaznADkDh1ev1/vOM+b4XkTM
+FWGN/PiynrhpIvAXBHfixvb6+dp15u3RJ0ZSw0Q2dUHm9k0hU/8ZrlNtynjKM8zDXAySsnCuX0cT
+ApAVY9oAsN0ht81Obi2SBCmy3cT1E8AEE/UKbPshtma6y3OsN0cBi9hNH8svfJgDO41aflpwPOXz
+FoKpi5icZTWPHUd654zPSYsOAu0CiYw7DsxIriNf7feZ2ffIzGdWv7FV2nkfCRN3MViwtEPQ3p0z
+POiKtpuFVtM6RyQDJxQ2vp2dANltXrYhtF+AjA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -134,4 +506,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7f6c8fc0-4488-4cb4-bf84-e9ca06f7698c" Target="#_7dc9e857-2e66-4a01-a3d1-e35d9ab55204"><Timestamp>2020-10-30 00:08:23</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_30816b62-9e37-4878-9462-ca5b4ffba098" Target="#_13c20c6e-3006-40de-a1aa-8a1ceee2acea"><Timestamp>2020-10-30 00:08:33</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
